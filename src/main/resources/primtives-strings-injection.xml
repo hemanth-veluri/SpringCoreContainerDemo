@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--DBConnection setup :: normal configuration :: setter injection-->
+    <!-- <bean id="dbConnectionBean"  class="primtives.injection.xml.DBConnection">
+            <property name="dbname"    value="MySQLDB"/>
+            <property name="dbport"  value="1301"/>
+         </bean> -->
+    
+    <!--DBConnection setup :: p namespace configuration :: setter injection-->
+    <!-- <bean id="dbConnectionBean"  class="primtives.injection.xml.DBConnection"   p:dbname="OracleDB" p:dbport="1511"/> -->
+    
+    
+    		  <!--****************************************************-->
+
+	<!--DBConnection setup :: normal configuration :: constructor injection -->
+	<!-- <bean id="dbConnectionBean" class="primtives.injection.xml.DBConnection">
+		<constructor-arg name="dbname" value="MySQLDB" />
+		<constructor-arg name="dbport" value="1301" />
+	</bean> -->
+	
+	<!--DBConnection setup :: c namespace configuration :: constructor injection-->
+    <bean id="dbConnectionBean"  class="primtives.injection.xml.DBConnection"   c:dbname="OracleDB" c:dbport="1511"/> 
+    
+   
+    <!--DBConnection setup :: Bean auto-wiring (This is applicable for only wiring other beans but not for primitives and strings)-->
+
+
+     <!--Constructor Confusion Example-->
+     <bean id="constructConfDemoBean" class="primtives.injection.xml.ConstructorConfusionDemo">
+        <constructor-arg  name="name" value="venkat" index="1" type="java.lang.String"/>
+        <constructor-arg name="id" value="111" index="0"  type="int"/>
+     </bean>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</beans>

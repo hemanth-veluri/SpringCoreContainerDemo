@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+  <!-- **********************List Injection*************************************-->
+    <!--ListInjection | Setter Injection | (default)ArrayList-->
+    <!-- <bean id="listInjectionBean" class="collection.injection.xml.ListInjection">
+      <property name="configFileList">
+         <list>                             
+           <value>configfile1.xml</value>
+           <value>configfile2.xml</value>
+           <value>configfile3.xml</value>
+         </list>
+      </property>
+    </bean> -->
+    
+    
+    <!--ListInjection | constructor Injection | (default)ArrayList-->
+    <!-- <bean id="listInjectionBean" class="collection.injection.xml.ListInjection">
+      <constructor-arg name="configFileList">
+         <list>                             
+           <value>configfile1.xml</value>
+           <value>configfile2.xml</value>
+           <value>configfile3.xml</value>
+         </list>
+      </constructor-arg>
+    </bean> -->
+    
+    
+    <!--ListInjection | Setter Injection | (customized)LinkedList-->
+   <!--  <bean id="listInjectionBean" class="collection.injection.xml.ListInjection">
+      <property name="configFileList">
+         <util:list list-class="java.util.LinkedList">                             
+            <value>configfile1.xml</value>
+            <value>configfile2.xml</value>
+            <value>configfile3.xml</value>
+         </util:list>
+      </property>
+    </bean> -->
+    
+     <!--ListInjection | Constructor Injection | (customized)LinkedList-->
+    <bean id="listInjectionBean" class="collection.injection.xml.ListInjection">
+      <constructor-arg name="configFileList">
+         <util:list list-class="java.util.LinkedList">                             
+            <value>configfile1.xml</value>
+            <value>configfile2.xml</value>
+            <value>configfile3.xml</value>
+         </util:list>
+      </constructor-arg>
+    </bean>
+ <!-- **********************List Injection*************************************-->
+  
+  
+
+ <!-- **********************Set Injection*************************************-->
+ <!--SetInjection | Setter Injection | (default) LinkedHashSet-->
+  <!-- <bean id="setInjection" class="collection.injection.xml.SetInjection">
+     <property name="namesSet">
+        <set>
+          <value>Anitha</value>
+          <value>Hemanth</value>
+          <value>Raj</value>
+           <value>Shafi</value>
+           <value>Shafi</value>
+        </set>
+     </property>
+  </bean> -->
+  
+   <!--SetInjection | Setter Injection | (customized) TreeSet-->
+  <bean id="setInjection" class="collection.injection.xml.SetInjection">
+     <property name="namesSet">
+        <util:set set-class="java.util.TreeSet">
+          <value>Shafi</value>
+           <value>Hemanth</value>
+          <value>Anitha</value>
+          <value>Raj</value>
+           <value>Shafi</value>
+        </util:set>
+     </property>
+  </bean>
+
+ <!-- **********************Set Injection*************************************-->
+ 
+ 
+ <!-- **********************Map Injection*************************************-->
+     <!--MapInjection | Setter Injection | (default) LinkedHashMap-->
+     <!-- <bean id="mapInjectionBean" class="collection.injection.xml.MapInjection">
+        <property name="map">
+          <map>
+            <entry  key="Hyderabad"  value="500072"/>
+            <entry  key="Bangalore"  value="516343"/>
+            <entry  key="Pune"  value="515432"/>
+          </map>
+        </property>
+     </bean> -->
+     
+      <!--MapInjection | Setter Injection | (custom) TreeMap-->
+     <bean id="mapInjectionBean" class="collection.injection.xml.MapInjection">
+        <property name="map">
+          <util:map map-class="java.util.TreeMap">
+            <entry  key="Hyderabad"  value="500072"/>
+            <entry  key="Bangalore"  value="516343"/>
+            <entry  key="Pune"  value="515432"/>
+          </util:map>
+        </property>
+     </bean>
+ 
+ 
+ 
+ <!-- **********************Map Injection*************************************-->
+ 
+ 
+ 
+ 
+
+</beans>

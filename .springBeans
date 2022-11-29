@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.9.7.201812201020-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[false]]></enableImports>
+	<configs>
+		<config>src/main/resources/spring-core-container-basics.xml</config>
+		<config>src/main/resources/spring-core-container-basics-annotation.xml</config>
+		<config>src/main/resources/primtives-strings-injection.xml</config>
+		<config>src/main/resources/collection-injection-xml.xml</config>
+		<config>src/main/resources/properties-injection-xml.xml</config>
+	</configs>
+	<autoconfigs>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>

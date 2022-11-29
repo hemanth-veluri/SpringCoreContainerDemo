@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+     <!--Properties Injection - xml hardcoded approach-->
+     <bean id="springBeanConfigPropsInjectionBean" class="collection.injection.xml.SprinBeanConfigPropsInjection">
+        <property name="properties">
+           <props>
+             <prop key="name">Rishi</prop>
+             <prop key="age">30</prop>
+             <prop key="city">Chennai</prop>
+           </props>
+        </property>
+     </bean>
+     
+     
+     
+     
+    <!--  <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:dbconfig.properties"/>
+     </bean> -->
+     
+     <!-- <context:property-placeholder location="classpath:dbconfig.properties"/> -->   
+     <!--  <context:property-placeholder location="file:///E://MySQL_DB_Conn.properties"/> -->
+      <context:property-placeholder location="file:///E://MySQL_DB_Conn-${ENV}.properties"/>
+     
+     <bean id="dbConnectBean" class="collection.injection.xml.DBConnect">
+       <property name="drvierClass"  value="${driverClassName}"/>
+       <property name="url"  value="${dbUrl}"/>
+       <property name="username"  value="${dbUsername}"/>
+       <property name="password"  value="${dbPassword}"/>
+     
+     </bean>
+     
+     
+
+</beans>

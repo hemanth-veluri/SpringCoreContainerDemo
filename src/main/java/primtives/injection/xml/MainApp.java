@@ -1,0 +1,16 @@
+package primtives.injection.xml;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainApp {
+
+	public static void main(String[] args) {
+       ApplicationContext context = new ClassPathXmlApplicationContext("primtives-strings-injection.xml");
+       System.out.println("Core Container is ready");
+       
+       //DBConnection dbConnection = (DBConnection) context.getBean("dbConnectionBean");
+       //dbConnection.getConnection();
+	}
+
+}

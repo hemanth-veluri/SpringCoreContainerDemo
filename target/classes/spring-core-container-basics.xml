@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <!--LoginIO : Setter Injection, without using p namespace-->
+   <!-- <bean id="loginIOBean"  class="basics.LoginIO">   
+          <property name="loginValidator" ref="loginValidatorBean"/>
+        </bean> -->
+   
+   <!--LoginIO : Setter Injection, with using p namespace-->
+  <!--  <bean id="loginIOBean"  class="basics.LoginIO" p:loginValidator-ref="loginValidatorBean" />    -->
+  
+   
+   <!--LoginIO : Setter Injection, with using bean auto-wiring by name-->
+   <!-- <bean id="loginIOBean"  class="basics.LoginIO" autowire="byName"/>  -->  
+   
+   <!--LoginIO : Setter Injection, with using bean auto-wiring by type-->
+   <!-- <bean id="loginIOBean"  class="basics.LoginIO" autowire="byType"/>  -->
+   
+   <!--LoginIO : Setter Injection, with using bean auto-wiring constructor-->
+   <bean id="loginIOBean"  class="basics.xml.LoginIO" autowire="constructor"/> 
+   
+   
+   <!--LoginIO : Constructor Injection-->
+   <!-- <bean id="loginIOBean"  class="basics.LoginIO">   
+          <constructor-arg name="loginValidator" ref="loginValidatorBean"/>
+    </bean> -->
+   
+   <!--LoginValidator, without using c namespace-->
+   <!-- <bean id="loginValidatorBean" class="basics.LoginValidator">
+      <constructor-arg   name="validationType"  value="basic"/>
+   </bean> -->
+   
+    <!--LoginValidator, with using c namespace-->
+    <bean id="loginValidator1" class="basics.xml.LoginValidator" c:validationType="basic" />
+   
+   
+   
+   <!--LoginDBValidator-->
+   <bean id="loginDBValidator" class="basics.xml.LoginDBValidator" primary="true"/>
+   
+   <!-- <bean id="loginValidator" class="java.util.ArrayList"/> -->
+   
+   
+</beans>
