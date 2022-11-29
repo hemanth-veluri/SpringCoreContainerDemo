@@ -1,0 +1,13 @@
+git commands
+
+cd pathof file in cmd prompt
+
+git init  --->INitialise git
+
+git remote add origin github repositorypath.git
+
+git add filename given to commit
+
+git commit -m "comments"
+
+git push origin master
