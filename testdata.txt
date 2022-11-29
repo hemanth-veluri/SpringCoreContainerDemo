@@ -11,3 +11,5 @@ git add filename given to commit
 git commit -m "comments"
 
 git push origin master
+
+git status
